@@ -1,0 +1,19 @@
+#answer-container {
+  background-color: var(--bg);
+  padding: 12px;
+  margin-left: 32px;
+  border-radius: 8px;
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 13px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+  }
+}
