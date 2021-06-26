@@ -149,6 +149,10 @@ export function useRoom(roomId: string) {
   }
 
   async function answerQuestion(questionId: string, answer: string) {
+    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+      isAnswered: user?.id === authorId,
+    });
+
     await database.ref(`rooms/${roomId}/questions/${questionId}/answers`).push({
       content: answer,
       author: {

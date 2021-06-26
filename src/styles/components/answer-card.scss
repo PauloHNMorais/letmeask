@@ -7,13 +7,25 @@
   footer {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
     font-size: 13px;
 
     img {
       width: 24px;
       height: 24px;
       border-radius: 50%;
+    }
+
+    div {
+      flex-direction: row;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }

@@ -7,6 +7,7 @@ import "../styles/components/question-card.scss";
 import { AnswerButton, TrashButton, LikeButton } from "./ActionButton";
 import { Button } from "./Button";
 import { AnswerCard } from "./AnswerCard";
+import { Loading } from "./Loading";
 
 type RoomParams = {
   id: string;
@@ -20,6 +21,8 @@ interface IProps {
   answerCount: number;
   likeId?: string;
   likeCount: number;
+  isAnswered?: boolean;
+  allowDeleteAnswer?: boolean;
   allowAnswerQuestion?: boolean;
   onAnswerConfirm?: (id: string, answer: string) => Promise<void>;
   onTrashClick?: (id: string) => void;
@@ -33,9 +36,11 @@ export function QuestionCard({
   likeCount,
   likeId,
   onTrashClick,
+  isAnswered,
   onAnswerConfirm,
   onLikeClick,
   answerCount,
+  allowDeleteAnswer,
   allowAnswerQuestion = false,
   children,
 }: IProps) {
@@ -44,12 +49,18 @@ export function QuestionCard({
   const [answer, setAnswer] = useState("");
   const params = useParams<RoomParams>();
   const roomId = params.id;
-  const { answers } = useAnswer(roomId, questionId);
+  const { answers, deleteAnswer } = useAnswer(roomId, questionId);
 
   function handleSubmitAnswer(e: FormEvent) {
     e.preventDefault();
     onAnswerConfirm?.(questionId, answer.trim());
     setAnswer("");
+  }
+
+  function handleDeleteAnswer(answerId: string) {
+    if (window.confirm("Tem certeza que deseja excluir esta resposta?")) {
+      deleteAnswer(answerId);
+    }
   }
 
   return (
@@ -61,15 +72,18 @@ export function QuestionCard({
           <span>{name}</span>
         </div>
         <div className="actions">
+          {!!onTrashClick && (
+            <TrashButton onClick={() => onTrashClick(questionId)} />
+          )}
+
           {!!onAnswerConfirm && (
             <AnswerButton
               answerCount={answerCount}
               onClick={toggleAnswerMode}
+              isActive={isAnswered}
             />
           )}
-          {!!onTrashClick && (
-            <TrashButton onClick={() => onTrashClick(questionId)} />
-          )}
+
           {!!onLikeClick && (
             <LikeButton
               likeCount={likeCount}
@@ -84,11 +98,18 @@ export function QuestionCard({
           <hr />
 
           {answers.length === 0 && (
-            <span className="no-answers">Nenhuma resposta ainda...</span>
+            <span className="no-answers">
+              <Loading label="Nenhuma resposta ainda" />
+            </span>
           )}
 
           {answers.map((answer) => (
-            <AnswerCard {...answer} />
+            <AnswerCard
+              key={answer.id}
+              {...answer}
+              onDeleteClick={() => handleDeleteAnswer(answer.id)}
+              allowDeleteAnswer={allowDeleteAnswer}
+            />
           ))}
 
           {allowAnswerQuestion && (

@@ -111,6 +111,7 @@ export function Room() {
             allowAnswerQuestion={
               authorId === user?.id || question.author.id === user?.id
             }
+            isAnswered={question.isAnswered}
           >
             <LikeButton
               likeCount={question.likeCount}

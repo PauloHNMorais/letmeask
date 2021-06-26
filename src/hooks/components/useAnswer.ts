@@ -37,18 +37,20 @@ export function useAnswer(roomId: string, questionId: string) {
     questionRef.on("value", (question) => {
       const databaseQuestion = question.val();
 
-      const firebaseAnswers: FirebaseAnswers = databaseQuestion.answers ?? {};
-      const parsedAnswers = Object.entries(firebaseAnswers).map(
-        ([key, value]) => ({
-          id: key,
-          content: value.content,
-          author: value.author,
-          questionId: value.questionId,
-          createdAt: value.createdAt,
-        })
-      );
+      if (databaseQuestion) {
+        const firebaseAnswers: FirebaseAnswers = databaseQuestion.answers ?? {};
+        const parsedAnswers = Object.entries(firebaseAnswers).map(
+          ([key, value]) => ({
+            id: key,
+            content: value.content,
+            author: value.author,
+            questionId: value.questionId,
+            createdAt: value.createdAt,
+          })
+        );
 
-      setAnswers(parsedAnswers.sort(sortAnswers));
+        setAnswers(parsedAnswers.sort(sortAnswers));
+      }
     });
 
     return () => {
@@ -56,7 +58,14 @@ export function useAnswer(roomId: string, questionId: string) {
     };
   }, [roomId, user?.id]);
 
+  async function deleteAnswer(answerId: string) {
+    await database
+      .ref(`rooms/${roomId}/questions/${questionId}/answers/${answerId}`)
+      .remove();
+  }
+
   return {
     answers,
+    deleteAnswer,
   };
 }

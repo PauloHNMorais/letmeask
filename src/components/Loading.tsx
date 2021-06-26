@@ -3,6 +3,7 @@ import "../styles/components/loading.scss";
 
 interface IProps {
   label: string;
+  className?: string;
 }
 
 export function Loading(props: IProps) {

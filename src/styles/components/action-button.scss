@@ -7,12 +7,12 @@ button {
   cursor: pointer;
   transition: filter 0.2 s;
 
-  &.like-button {
+  &.action-button {
     display: flex;
     align-items: flex-end;
     gap: 4px;
 
-    &.liked {
+    &.active {
       color: var(--primary);
       svg path {
         stroke: var(--primary);

@@ -12,7 +12,7 @@ interface ILikeProps {
 export function LikeButton(props: ILikeProps) {
   return (
     <button
-      className={`like-button ${props.hasLiked && "liked"}`}
+      className={`action-button ${props.hasLiked && "active"}`}
       type="button"
       aria-label="Marcar como gostei"
       onClick={props.onClick}
@@ -78,12 +78,13 @@ export function TrashButton(props: ITrashProps) {
 interface IAnswerProps {
   onClick?: () => void;
   answerCount: number;
+  isActive?: boolean;
 }
 
 export function AnswerButton(props: IAnswerProps) {
   return (
     <button
-      className="trash-button"
+      className={`action-button ${props.isActive && "active"}`}
       type="button"
       aria-label="Marcar como gostei"
       onClick={props.onClick}

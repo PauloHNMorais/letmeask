@@ -23,6 +23,7 @@ type RoomParams = {
 export function AdminRoom() {
   const [question, setQuestion] = useState("");
   const history = useHistory();
+  const { user } = useAuth();
   const params = useParams<RoomParams>();
   const roomId = params.id;
   const {
@@ -34,6 +35,7 @@ export function AdminRoom() {
     endRoom,
     answerQuestion,
     likeQuestion,
+    authorId,
   } = useRoom(roomId);
 
   async function handleSubmit(e: FormEvent) {
@@ -86,13 +88,13 @@ export function AdminRoom() {
             id={question.id}
             likeCount={question.likeCount}
             likeId={question.likeId}
+            allowAnswerQuestion
+            allowDeleteAnswer
+            isAnswered={question.isAnswered}
             onAnswerConfirm={answerQuestion}
             onLikeClick={() => likeQuestion(question.id, question.likeId)}
-            allowAnswerQuestion
-          >
-            <AnswerButton answerCount={question.answerCount} />
-            <TrashButton onClick={() => deleteQuestion(question.id)} />
-          </QuestionCard>
+            onTrashClick={() => deleteQuestion(question.id)}
+          />
         ))}
 
         {!questions.length && !loadingQuestions && (
