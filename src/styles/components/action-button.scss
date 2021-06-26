@@ -1,0 +1,26 @@
+@import "../theme.scss";
+
+button {
+  border: 0;
+  background-color: transparent;
+  color: var(--gray);
+  cursor: pointer;
+  transition: filter 0.2 s;
+
+  &.like-button {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+
+    &.liked {
+      color: var(--primary);
+      svg path {
+        stroke: var(--primary);
+      }
+    }
+  }
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+}

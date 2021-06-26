@@ -1,0 +1,64 @@
+#question-card {
+  background: var(--white);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  margin: 8px 0;
+  text-align: justify;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: var(--gray);
+    font-size: 14px;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .actions {
+      gap: 16px;
+    }
+  }
+
+  footer {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .no-answers {
+      color: var(--secondary);
+      align-self: center;
+    }
+
+    hr {
+      border: 1px solid var(--bg);
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 16px;
+
+      textarea {
+        resize: none;
+        background-color: var(--bg);
+        border: 1px solid var(--primary);
+      }
+    }
+  }
+}

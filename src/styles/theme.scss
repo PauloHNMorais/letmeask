@@ -1,0 +1,47 @@
+.theme-lights {
+  --primary: #f15156;
+  --secondary: #a03e99;
+  --white: #fff;
+  --bg: #f8f8f8;
+  --text: #29292e;
+  --text-gray: #a8a8b3;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-darks {
+  --primary: #f15156;
+  --secondary: #a03e99;
+  --white: #222;
+  --bg: #29292e;
+  --text: #ddd;
+  --text-gray: #a8a8b3;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-light {
+  --primary: #835afe;
+  --secondary: #e559f9;
+  --white: #fff;
+  --bg: #f8f8f8;
+  --text: #29292e;
+  --text-gray: #a8a8b3;
+
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-dark {
+  --primary: #6344bf;
+  --secondary: #ab43ba;
+  --white: #222;
+  --bg: #29292e;
+  --text: #ddd;
+  --text-gray: #a8a8b3;
+
+  background: var(--bg);
+  color: var(--text);
+}
