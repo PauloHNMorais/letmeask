@@ -10,6 +10,7 @@ import { Loading } from "../components/Loading";
 import { QuestionCard } from "../components/QuestionCard";
 import { useHistory, useParams } from "react-router-dom";
 import { ThemeButton } from "../components/ThemeButton";
+import { Logo } from "../components/Logo";
 
 type RoomParams = {
   id: string;
@@ -52,7 +53,7 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <Logo />
           <div>
             <RoomCode>{roomId}</RoomCode>
             <Button mode="outlined" onClick={handleEndRoom}>

@@ -1,6 +1,6 @@
 import React from "react";
 import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
+import { Logo } from "../components/Logo";
 
 import "../styles/pages/auth.scss";
 import { Button } from "../components/Button";
@@ -21,7 +21,7 @@ export function Home() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="letmeask" />
+          <Logo />
           <button className="create-room" onClick={handleCreateRoom}>
             <svg
               width="24"

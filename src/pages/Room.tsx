@@ -1,5 +1,4 @@
 import React, { FormEvent } from "react";
-import logoImg from "../assets/images/logo.svg";
 import { useRoom } from "../hooks/pages/useRoom";
 import { Button } from "../components/Button";
 import { RoomCode } from "../components/RoomCode";
@@ -13,6 +12,7 @@ import { LikeButton, TrashButton } from "../components/ActionButton";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 import { ThemeButton } from "../components/ThemeButton";
+import { Logo } from "../components/Logo";
 
 type RoomParams = {
   id: string;
@@ -58,7 +58,7 @@ export function Room() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <Logo />
           <div>
             <RoomCode>{roomId}</RoomCode>
             <Button mode="outlined" onClick={handleExitRoom}>

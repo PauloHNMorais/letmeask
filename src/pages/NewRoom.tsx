@@ -7,6 +7,7 @@ import { Button } from "../components/Button";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useNewRoom } from "../hooks/pages/useNewRoom";
+import { Logo } from "../components/Logo";
 
 export function NewRoom() {
   const { user } = useAuth();
@@ -24,7 +25,7 @@ export function NewRoom() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="letmeask" />
+          <Logo />
           <h1>{user?.name}</h1>
           <h2>Criar uma nova sala</h2>
           <form action="" onSubmit={handleCreateRoom}>
