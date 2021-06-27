@@ -9,11 +9,6 @@ import { useAuth } from "../hooks/useAuth";
 import { Loading } from "../components/Loading";
 import { QuestionCard } from "../components/QuestionCard";
 import { useHistory, useParams } from "react-router-dom";
-import {
-  LikeButton,
-  TrashButton,
-  AnswerButton,
-} from "../components/ActionButton";
 import { ThemeButton } from "../components/ThemeButton";
 
 type RoomParams = {

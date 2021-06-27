@@ -1,46 +1,105 @@
-# Getting Started with Create React App
+<img src="src/assets/images/logo.svg" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# letmeask - App de Perguntas & Respostas ao vivo
 
-## Available Scripts
+Este app lhe permite criar e acessar salas de Perguntas & Respostas em tempo real, como uma sala de bate-papo.
+Você pode acessar, interagir com os participantes dando like, respondendo, e compartilhando link de acesso de uma forma super simples.
 
-In the project directory, you can run:
+👉 Este APP foi desenvolvido e aprimorado no evento online NLW/Together, da [RocketSeat](https://rocketseat.com.br/)
 
-### `yarn start`
+## 🛠️ Ferramentas Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Foram utilizadas as seguintes ferramentas e serviços para o projeto:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React.js
+- TypeScript
+- Sass
+- Google FireBase
 
-### `yarn test`
+## 🚀 Começando
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Você pode acessá-lo gratuitamente em [https://letmeask-88905.web.app/](https://letmeask-88905.web.app/)
+As instruções a seguir lhe apresentarão o app com capturas de telas e, caso deseje, tutorias de instalação e execução em sua máquina.
 
-### `yarn build`
+- Telas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="/src/assets/images/screenshots/1.png" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="/src/assets/images/screenshots/2.png" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="/src/assets/images/screenshots/3.png" />
 
-### `yarn eject`
+<img src="/src/assets/images/screenshots/4.png" />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 📋 Instalação e Testes
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Node.js
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Você pode instalar Node.js na versão adequada para seu sistema em: https://nodejs.org/pt-br/download/
 
-## Learn More
+- Git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Com o Node.js instalado, ocê pode instalar o Git pela linha de comando em um terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+// Instala GIT globalmente
+$ npm install -g git
+```
+
+Ou acesse: https://git-scm.com/downloads
+
+### 🔧 Instalação e Execução
+
+- Clonando o Projeto
+
+Para criar uma cópia do projeto, execute os seguintes comandos no terminal de seu sistema operacional (ex.: Prompt de Comando, PowerShell, Terminal):
+
+```
+// Navega para uma pasta de sua preferência
+$ cd /meu_diretorio
+
+// Clona o projeto para a pasta
+$ git clone https://github.com/PauloHNMorais/letmeask.git
+
+// Navega até a pasta do projeto baixado
+$ cd letmeask
+
+// Instala as dependências do projeto
+$ npm install
+```
+
+- Executando o Projeto
+
+Após executar os comandos acima, execute:
+
+```
+// Rodar o projeto
+npm start
+```
+
+Assim, deve ser mostrado no terminal a seguinte mensagem e, em seguida, abrindo seu navegador com o endereço "localhost:3000"
+
+```
+$ PS C:\Users\usuario\...\letmeask npm start
+
+yarn start
+yarn run v1.22.10
+$ react-scripts start
+
+
+
+
+Starting the development server...
+
+```
+
+## 🎁 Agradecimentos
+
+- Agradeço a [RocketSeat](https://rocketseat.com.br/) por mais um evento
+- Agradeço a cerveja gelada do boteco do Sr. Mário
+
+---
+
+⌨️ com ❤️ por Paulo H N Morais (https://github.com/PauloHNMorais) 🍷🐴
